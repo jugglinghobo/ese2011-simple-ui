@@ -1,0 +1,15 @@
+Q1: Explain how a typical HTTP request is processed with the framework (the request lifecycle).
+
+A: 	Whenever the Router recieves a HTTP request, it will pass the request to the corresponding controller and one of its methods.
+	This route is defined in the routes file. For example, if the user clicks on a link which leads to /index, the router tries to
+	find the Controller specified to handle this request, possibly Application, and call its index() method. The method does the stuff
+	it has to do and eventually calls a render() function (or another method with a render() function). The render() method call then
+	is written as a HTTP response and sent back.
+	
+Q2:	How could you test user interfaces with the testing facilities in play! framework?
+	
+A:	The play! framework comes with multiple testing tools, one of which is Selenium. Selenium lets you write automated user interface
+	tests by defining different 'user actions'. This means, you can for example test a login, which needs user actions such as entering
+	a name and password. This sounds pretty neat, but then again... you'd have to define the 'user actions' in a well-structured HTML
+	file. Fortunately, the play! framework took care of that by providing templates and the selenium tags. That way, you can just surround
+	your selenium commands with the tags and play! takes care of the formatting.
